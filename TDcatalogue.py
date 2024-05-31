@@ -16,7 +16,7 @@ def catalogue():
     sigmatd(ndarray): Array of time delay uncertainties in seconds.
     
     """
-    df = pd.read_csv("/home/users/cha227/Documents/TD_lens/TDcatalogue.csv", header=None)
+    df = pd.read_csv("TDcatalogue.csv", header=None)
     arr = df.to_numpy()
     zl = arr[:,1]
     zs = arr[:,2]
