@@ -1,10 +1,9 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from astropy.cosmology import FlatLambdaCDM
 import pymultinest
 
 #load the catalogue
-from TDcatalogue import *
+from TDcatalogue import catalogue, c
 
 
 
@@ -47,6 +46,7 @@ class loglike_flrw(object):
 ndim = 1
 prior_lims = [(0.0, 0.5)]
 
+zl, zs, thetaA, sigmaA, thetaB, sigmaB, td, sigmatd = catalogue()
 loglike = loglike_flrw(zl, zs, thetaA, sigmaA, thetaB, sigmaB, td, sigmatd)
 
 def prior(cube, ndim, nparams):
